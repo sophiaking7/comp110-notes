@@ -20,16 +20,33 @@ def create_edited_string(text_with_edit_marks):
 def test_create_edited_string():
     """ Function that tests the create_edited_string function. """
 
-    if create_edited_string("This was !qwicked awesome") != "This was wicked awesome":
-        print("Test 1 failed")
-    if create_edited_string("Please do not ^make me yell") != "Please do not MAKE ME YELL":
-        print("Test 2 failed")
-    if create_edited_string("This is my ^roar!s") != "This is my ROAR":
-        print("Test 3 failed")
-    if create_edited_string("You need to \_CALM DOWN") != "You need to calm down":
-        print("Test 4 failed")
-    if create_edited_string("You need to \_CALM ^down") != "You need to calm DOWN":
-        print("Test 5 failed")
+    # define a list with our test inputs
+    test_cases = []
+    test_cases.append("This was !qwicked awesome")
+    test_cases.append("Please do not ^make me yell")
+    test_cases.append("This is my ^roar!s")
+    test_cases.append("You need to _CALM DOWN")
+    test_cases.append("You need to _CALM ^down")
+
+    # define a list with the expected results based on inputs
+    solutions = []
+    solutions.append("This was wicked awesome")
+    solutions.append("Please do not MAKE ME YELL")
+    solutions.append("This is my ROAR")
+    solutions.append("You need to calm down")
+    solutions.append("You need to calm DOWN")
+
+    for i in range(len(test_cases)):
+        # get the input and expected result
+        current_test = test_cases[i]
+        current_solution = solutions[i]
+
+        # call the function and check the result
+        result = create_edited_string(current_test)
+        if result != current_solution:
+            print("Test", i, "FAILED. Expected:", current_solution, " but got:", result)
+        else:
+            print("Test", i, "PASSED.")
 
 # Do not modify anything after this point.
 if __name__ == "__main__":
