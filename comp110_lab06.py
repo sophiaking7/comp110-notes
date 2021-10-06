@@ -32,6 +32,7 @@ def test_create_edited_string():
     test_cases.append("This is my ^roar!s")
     test_cases.append("You need to _CALM DOWN")
     test_cases.append("You need to _CALM ^down")
+    test_cases.append("Please give me some ^f!lood")
     test_cases.append("Interesting _result")
 
     # define a list with the expected results based on inputs
@@ -42,6 +43,7 @@ def test_create_edited_string():
     solutions.append("This is my ROAR")
     solutions.append("You need to calm down")
     solutions.append("You need to calm DOWN")
+    solutions.append("Please give me some FOOD")
     solutions.append("Interesting result")
 
     num_passed = 0
