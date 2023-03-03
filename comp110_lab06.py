@@ -11,11 +11,16 @@ def create_edited_string(text_with_edit_marks):
     final_str = ""
 
     for ch in text_with_edit_marks:
-        final_str = final_str + ch
-
+        if ch == '!':
+            pass
+        elif ch == '^':
+            pass
+        elif ch == '_': 
+            pass
+        else:
+            final_str = final_str + ch
+        
     return final_str
-
-
 
 def test_create_edited_string():
     """
